@@ -1,4 +1,4 @@
-```jsp
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@page import="com.student.dao.StudentDAO"%>
 <%@page import="java.sql.SQLException"%>
 
@@ -51,4 +51,3 @@
 
 </body>
 </html>
-```
