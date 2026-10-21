@@ -38,23 +38,18 @@
         isValid = false;
     }
 
-    int age = 0;
+   int ageInt = 0;
 
-    try {
-        if (employeeAge == null || employeeAge.trim().isEmpty()) {
-            throw new NumberFormatException();
-        }
+    if (age == null || !age.matches("\\d+")) {
+        ageError = "Age must be a valid numeric value.";
+        isValid = false;
+    } else {
+        ageInt = Integer.parseInt(age);
 
-        age = Integer.parseInt(employeeAge);
-
-        if (age < 18 || age > 65) {
-            ageError = "Employee age must be between 18 and 65!";
+        if (ageInt < 18 || ageInt > 65) {
+            ageError = "Age should be between 18 and 65.";
             isValid = false;
         }
-
-    } catch (NumberFormatException e) {
-        ageError = "Age must be a valid number!";
-        isValid = false;
     }
 
     if (employeeDept == null || employeeDept.trim().isEmpty()) {
