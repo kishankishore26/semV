@@ -40,11 +40,11 @@
 
    int ageInt = 0;
 
-    if (age == null || !age.matches("\\d+")) {
-        ageError = "Age must be a valid numeric value.";
-        isValid = false;
-    } else {
-        ageInt = Integer.parseInt(age);
+   if (employeeAge == null || !employeeAge.matches("\\d+")) {
+	    ageError = "Age must be a valid numeric value.";
+	    isValid = false;
+	} else {
+	    ageInt = Integer.parseInt(employeeAge);
 
         if (ageInt < 18 || ageInt > 65) {
             ageError = "Age should be between 18 and 65.";
@@ -73,8 +73,7 @@
     if (isValid) {
         Calendar calendar = Calendar.getInstance();
         int currentYear = calendar.get(Calendar.YEAR);
-        birthYear = currentYear - age;
-
+        birthYear = currentYear - ageInt;
         nameAndDepartment = employeeName + " (" + employeeDept + ")";
         formattedEmail = employeeEmail.toLowerCase();
     }
