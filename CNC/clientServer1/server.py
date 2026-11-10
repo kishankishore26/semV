@@ -16,5 +16,5 @@ while(True):
 		fileContents=file.read()
 		clientSocket.send(fileContents)
 	else:
-		print("File Not Found".encode())
+		clientSocket.sendall("File Not Found".encode())
 	clientSocket.close()
