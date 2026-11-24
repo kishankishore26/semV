@@ -4,41 +4,40 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Employee Information:</title>
+<title>Employee Result</title>
 </head>
 <body>
-	<h2>Employee Results Information: </h2>
+	<h2>Employee Result:</h2>
 	<%
-		String employeeId = request.getParameter("employeeID");
-		String employeeName = request.getParameter("employeeName");
-		String employeeAge = request.getParameter("employeeAge");
-		String employeeDepartment = request.getParameter("employeeDepartment");
-		String employeeEmail = request.getParameter("employeeEmail");
+		String id = request.getParameter("id");
+		String name = request.getParameter("name");
+		String age = request.getParameter("age");
+		String department = request.getParameter("department");
+		String email = request.getParameter("email");
 		
-		int age = Integer.parseInt(employeeAge);
 		Calendar calendar = Calendar.getInstance();
 		int currentYear = calendar.get(Calendar.YEAR);
-		int birthYear = currentYear - age;
-		String nameAndDepartment = employeeName + "("+ employeeDepartment + ")";
-		
-		String formattedEmail = employeeEmail.toLowerCase();
+		int ageInt = Integer.parseInt(age);
+		int birthYear = currentYear-ageInt;
+		String formattedEmail = email.toLowerCase();
+		String nameAndDept = name +"(" +department +")";
 	%>
 	
 	<table border="1">
 		<tr>
 			<th>Employee ID</th>
-			<td><%=employeeId %></td>
+			<td><%=id %></td>
 		</tr>
 		<tr>
-			<th>Name and Department</th>
-			<td><%=nameAndDepartment %></td>
+			<th>Employee Name and Department</th>
+			<td><%=nameAndDept %></td>
 		</tr>
 		<tr>
-			<th>Birth Year</th>
-			<td><%=birthYear %></td>
+			<th>Employee Age</th>
+			<td><%=ageInt %></td>
 		</tr>
 		<tr>
-			<th>Email</th>
+			<th>Employee Email</th>
 			<td><%=formattedEmail %></td>
 		</tr>
 	</table>
