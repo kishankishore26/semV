@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 public class BookManager {
 	@Autowired
 	BookRepository repository;
+	
 	public List<Book> getAllBook(){
 		return repository.findAll();
 	}
