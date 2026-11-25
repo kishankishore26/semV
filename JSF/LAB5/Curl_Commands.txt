@@ -1,0 +1,18 @@
+1.Add a Mobile
+curl -X POST http://localhost:8080/mobile \
+-H "Content-Type: application/json" \
+-d '{"name":"iPhone","model":18,"osystem":"iOS"}'
+
+2.Retrieve all Mobiles
+curl -X GET http://localhost:8080/mobile
+
+3.Retrieve Mobiles by ID
+curl -X GET http://localhost:8080/mobile/1
+
+4.Update a Mobile
+curl -X PUT http://localhost:8080/mobile \
+-H "Content-Type: application/json" \
+-d '{"id":1,"name":"Samsung","model":25,"osystem":"Android"}'
+
+5.Delete a Mobile
+curl -X DELETE http://localhost:8080/mobile/1
