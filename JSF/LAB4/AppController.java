@@ -10,8 +10,10 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
 public class AppController {
+
 	@Autowired
 	BookManager manager;
+	
 	@GetMapping("/")
 	public String showHomePage(Model model) {
 		model.addAttribute("booklist",manager.getAllBook());
@@ -30,13 +32,13 @@ public class AppController {
 	}
 	
 	@GetMapping("/edit/{id}")
-	public String editBook(@PathVariable Long id, Model model) {
-		model.addAttribute("staff", manager.getBookById(id));
+	public String editBook(@PathVariable Long id,Model model) {
+		model.addAttribute("book",manager.getBookById(id));
 		return "edit_form";
 	}
 	
 	@GetMapping("/delete/{id}")
-	public String deleteBook(@PathVariable Long id, Model model) {
+	public String deleteBook(@PathVariable Long id,Model model) {
 		manager.deleteBook(id);
 		return "redirect:/";
 	}
