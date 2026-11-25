@@ -7,7 +7,6 @@ import jakarta.persistence.Id;
 
 @Entity
 public class Book {
-	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	Long id;
@@ -16,7 +15,8 @@ public class Book {
 	int price;
 	
 	public Book() {
-		
+		super();
+		// TODO Auto-generated constructor stub
 	}
 
 	public Long getId() {
